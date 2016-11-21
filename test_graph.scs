@@ -1,0 +1,16 @@
+undirected_graph->test_graph_number_of_edge_connection(*
+	->rrel_vertex: ..AA;;
+	->rrel_vertex: ..BB;;
+	->rrel_vertex: ..CC;;
+
+	
+	->rrel_edge: ( ..AA <=> ..CC );;
+	->rrel_edge: ( ..CC <=> ..AA );;
+	
+	->rrel_edge: ( ..BB <=> ..CC );;
+	->rrel_edge: ( ..CC <=> ..BB );;
+	
+	->rrel_edge: ( ..BB <=> ..AA );;
+	->rrel_edge: ( ..AA <=> ..BB );;
+*);;
+

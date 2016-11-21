@@ -1,0 +1,162 @@
+scp_program -> proc_find_max_stream (*
+	
+	-> rrel_params: ... (*
+		-> rrel_1: rrel_in: _graph1;;
+		-> rrel_2: rrel_in: _begin;;
+		-> rrel_3: rrel_in: _end;;
+		-> rrel_4: rrel_out: _temp_rez;;
+	*);;
+
+	-> rrel_operators: ... (*
+
+	-> rrel_init: ..proc_find_max_stream_operator1 (*
+			<- contAssign;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _temp_rez;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+			=> nrel_goto: ..proc_find_max_stream_operator2;;
+		*);;
+		-> ..proc_find_max_stream_operator2 (*
+			<- genElStr3;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _visit_set;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _begin;;
+			
+			=> nrel_goto: ..proc_find_max_stream_operator3 ;;
+		*);;
+		
+		-> ..proc_find_max_stream_operator3 (*
+			<- searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _begin;;
+			-> rrel_2: rrel_assign: rrel_scp_var: _ed1;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _SV;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _ed3;;
+			-> rrel_5: rrel_fixed: rrel_scp_var: _graph1;;
+
+
+			
+			->rrel_set_3: rrel_assign: rrel_scp_var: _StackSet;;
+			=> nrel_then: ..proc_find_max_stream_operator4;;
+			=> nrel_else: ..proc_find_max_stream_return;;
+
+		*);;
+		-> ..proc_find_max_stream_operator4(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _StackSet;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var:_ed2;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _SV1;;
+
+			
+			
+			=> nrel_then: ..proc_find_max_stream_operator5;;
+			=> nrel_else: ..proc_find_max_stream_return;;
+		*);;
+		
+		-> ..proc_find_max_stream_operator5 (*
+			<- eraseEl;;
+                -> rrel_1:rrel_fixed:rrel_pos_const_perm:rrel_scp_var:rrel_erase:_ed2;;
+
+                 => nrel_goto: ..proc_find_max_stream_operator6;;
+		*);;
+		-> ..proc_find_max_stream_operator6(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _visit_set;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var:_ed7;;
+			-> rrel_3:  rrel_fixed: rrel_scp_var: _SV1;;
+
+						
+			=> nrel_then: ..proc_find_max_stream_operator4;;
+			=> nrel_else: ..proc_find_max_stream_operator7;;
+		*);;
+		-> ..proc_find_max_stream_operator7 (*
+			<- ifCoin;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _SV1;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _end;;
+
+			=> nrel_then: ..proc_find_max_stream_operator8;;
+			=> nrel_else: ..proc_find_max_stream_operator9;;
+		*);;
+		->..proc_find_max_stream_operator8 (*
+			<- contAdd;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _temp_rez;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _temp_rez;;
+			-> rrel_3: rrel_fixed: rrel_scp_const: [1];;		
+		
+			=> nrel_goto: ..proc_find_max_stream_operator4;;	
+		*);;
+		-> ..proc_find_max_stream_operator9 (*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _visit_set;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _SV1;;
+			
+			=> nrel_goto: ..proc_find_max_stream_operator10 ;;
+		*);;
+		->..proc_find_max_stream_operator10 (*
+			<- searchSetStr5;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _SV1;;
+			-> rrel_2: rrel_assign: rrel_scp_var: _ed12;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _SV;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _ed5;;
+			-> rrel_5: rrel_fixed: rrel_scp_var: _graph1;;
+
+
+			
+			->rrel_set_3: rrel_assign: rrel_scp_var: _temp_StackSet;;
+			=> nrel_then: ..proc_find_max_stream_operator11;;
+			=> nrel_else: ..proc_find_max_stream_operator4;;
+		*);;
+		-> ..proc_find_max_stream_operator11(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _temp_StackSet;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var:_ed9;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _SV2;;
+
+			
+			
+			=> nrel_then: ..proc_find_max_stream_operator12;;
+			=> nrel_else: ..proc_find_max_stream_operator4;;
+		*);;
+		-> ..proc_find_max_stream_operator12 (*
+			<- eraseEl;;
+                -> rrel_1:rrel_fixed:rrel_pos_const_perm:rrel_scp_var:rrel_erase:_ed9;;
+
+                 => nrel_goto: ..proc_find_max_stream_operator13;;
+		*);;
+		-> ..proc_find_max_stream_operator13(*
+			<- searchElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _visit_set;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var:_ed6;;
+			-> rrel_3:  rrel_fixed: rrel_scp_var: _SV2;;
+
+						
+			=> nrel_then: ..proc_find_max_stream_operator11;;
+			=> nrel_else: ..proc_find_max_stream_operator14;;
+		*);;
+		-> ..proc_find_max_stream_operator14 (*
+			<- genElStr3;;
+			-> rrel_1: rrel_fixed: rrel_scp_var: _StackSet;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc3;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _SV2;;
+			
+			=> nrel_goto: ..proc_find_max_stream_operator11 ;;
+		*);;
+
+
+
+//удаление 
+		-> ..proc_find_max_stream_return (*
+			<- eraseEl;;
+                -> rrel_1:rrel_fixed: rrel_scp_var: rrel_erase: _visit_set;;
+
+                 => nrel_goto: ..proc_find_max_stream_return_end;;
+		*);;
+		
+/////////////////////////////////////////////////////////////////////////////////		
+		
+		
+		
+		-> ..proc_find_max_stream_return_end (*
+			<- return;;
+		*);;
+	*);;
+*);;

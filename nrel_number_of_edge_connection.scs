@@ -1,0 +1,4 @@
+sc_node_norole_relation ->nrel_number_of_edge_connection;;
+
+nrel_number_of_edge_connection=> nrel_main_idtf:[число реберной связности*](* <-lang_ru;; *);;
+nrel_number_of_edge_connection=> nrel_main_idtf:[number of edge connection*](* <-lang_en;; *);;

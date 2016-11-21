@@ -1,0 +1,191 @@
+scp_program -> proc_find_number_of_edge_connection (*
+	
+	-> rrel_params: ... (*
+		-> rrel_1: rrel_in: _graph;;
+		-> rrel_2: rrel_in: _agent_answer;;
+	*);;
+
+	-> rrel_operators: ... (*
+
+	-> rrel_init: .proc_find_number_of_edge_connection_operator0 (*
+			<- searchElStr5;;
+
+			-> rrel_1: rrel_fixed: rrel_scp_var: _graph;;
+			-> rrel_2: rrel_assign: rrel_scp_var: _arc19;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _rezz;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc24;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_number_of_edge_connection;;
+
+			=> nrel_then: ..proc_run_testcase_operator_return_end;;
+			=> nrel_else: ..proc_find_number_of_edge_connection_operator1;;
+		*);;
+		->..proc_find_number_of_edge_connection_operator1 (*
+			<- contAssign;;
+
+			-> rrel_1: rrel_assign: rrel_scp_var: _REZ;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+
+			=> nrel_goto: .proc_find_number_of_edge_connection_operator2;;
+		*);;
+		->.proc_find_number_of_edge_connection_operator2 (*
+			<- contAssign;;
+			
+			-> rrel_1: rrel_assign: rrel_scp_var: _TRIGER;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [0];;
+			=> nrel_goto: ..proc_find_number_of_edge_connection_operator3;;
+		*);;
+
+		-> ..proc_find_number_of_edge_connection_operator3 (*
+			<- searchSetStr5;;
+			
+			-> rrel_1: rrel_fixed: rrel_scp_var: _graph;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc2;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _el3;;
+			-> rrel_4: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc4;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: rrel_vertex;;
+			
+			->rrel_set_3: rrel_assign: rrel_scp_var: _biginset;;
+			
+			=> nrel_goto: ..proc_find_number_of_edge_connection_operator4;;
+		*);;
+		-> ..proc_find_number_of_edge_connection_operator4 (*
+			<- searchElStr3;;
+			
+			-> rrel_1:  rrel_fixed: rrel_scp_var: _biginset;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcbeg;;
+			-> rrel_3: rrel_assign: rrel_scp_var: _begin;;
+
+			
+			=> nrel_then: ..proc_find_number_of_edge_connection_operator5;;
+			=> nrel_else: ..proc_run_testcase_operator_return;;
+		*);;
+		-> ..proc_find_number_of_edge_connection_operator5 (*
+			<- eraseEl;;
+			
+            -> rrel_1:rrel_fixed:rrel_pos_const_perm:rrel_scp_var:rrel_erase:_arcbeg;;
+
+            => nrel_goto: ..proc_find_number_of_edge_connection_operator6;;
+		*);;
+		-> ..proc_find_number_of_edge_connection_operator6 (*
+        	<- searchSetStr3;;
+			
+        	-> rrel_1:  rrel_fixed: rrel_scp_var: _biginset;;
+        	-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc5;;
+        	-> rrel_3: rrel_assign: rrel_scp_var: _V;;
+
+            ->rrel_set_3: rrel_assign: rrel_scp_var: _endset;;
+			=> nrel_then: ..proc_find_number_of_edge_connection_operator7;;
+			=> nrel_else: ..proc_run_testcase_operator_return;;
+
+        		*);;
+		-> ..proc_find_number_of_edge_connection_operator7 (*
+            <- searchSetStr3;;
+			
+            -> rrel_1:  rrel_fixed: rrel_scp_var: _endset;;
+            -> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arcend;;
+            -> rrel_3: rrel_assign: rrel_scp_var: _end;;
+
+
+             => nrel_then: ..proc_find_number_of_edge_connection_operator8;;
+             => nrel_else: ..proc_find_number_of_edge_connection_operator4;;
+
+
+
+		*);;
+		-> ..proc_find_number_of_edge_connection_operator8(*
+			<- call;;
+			
+			-> rrel_1: rrel_fixed: rrel_scp_const: proc_find_max_stream;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: ... (*
+				-> rrel_1: rrel_fixed: rrel_scp_var: _graph;;
+				-> rrel_2: rrel_fixed:  rrel_scp_var: _begin;;
+				-> rrel_3: rrel_fixed: rrel_scp_var: _end;;
+				-> rrel_4: rrel_assign: rrel_scp_var: _answer;;
+			*);;
+			-> rrel_3: rrel_assign: rrel_scp_var: _descr;;
+
+			=> nrel_goto: ..proc_find_number_of_edge_connection_operator9;;
+		*);;
+	
+		-> ..proc_find_number_of_edge_connection_operator9 (*
+			<- waitReturn;;
+			
+			-> rrel_1: rrel_fixed: rrel_scp_var: _descr;;
+
+			=> nrel_goto: ..proc_find_number_of_edge_connection_operator10 ;;
+		*);;
+		-> ..proc_find_number_of_edge_connection_operator10 (*
+        	<- ifEq;;
+			
+			-> rrel_1:rrel_fixed: rrel_scp_var: _TRIGER;;
+			-> rrel_2:rrel_fixed: rrel_scp_const: [0];;
+			
+			=> nrel_then: ..proc_find_number_of_edge_connection_operator11;;
+			=> nrel_else: ..proc_find_number_of_edge_connection_operator12;;
+        		*);;
+		-> ..proc_find_number_of_edge_connection_operator11 (*
+        	<- contAssign;;
+			
+			-> rrel_1: rrel_assign: rrel_scp_var: _TRIGER;;
+			-> rrel_2: rrel_fixed: rrel_scp_const: [1];;
+
+            => nrel_goto: ..proc_find_number_of_edge_connection_operator13;;
+        		*);;
+		-> ..proc_find_number_of_edge_connection_operator13 (*
+        	<- contAssign;;
+			-> rrel_1: rrel_assign: rrel_scp_var: _REZ;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _answer;;
+
+            => nrel_goto: ..proc_find_number_of_edge_connection_operator14;;
+        		*);;
+		-> ..proc_find_number_of_edge_connection_operator12 (*
+        	<- ifGr;;
+			
+			-> rrel_1: rrel_fixed: rrel_scp_var: _answer;;
+			-> rrel_2: rrel_fixed: rrel_scp_var: _REZ;;
+			
+			=> nrel_then: ..proc_find_number_of_edge_connection_operator14;;
+			=> nrel_else: ..proc_find_number_of_edge_connection_operator13;;
+        		*);;
+		
+		
+		
+		
+        -> ..proc_find_number_of_edge_connection_operator14 (*
+        	<- eraseEl;;
+					
+            -> rrel_1:rrel_fixed:rrel_pos_const_perm:rrel_scp_var:rrel_erase:_arcend;;
+
+            => nrel_goto: ..proc_find_number_of_edge_connection_operator7;;
+        		*);;
+
+		
+		
+
+		-> ..proc_run_testcase_operator_return (*
+			<- genElStr5;;
+			
+			-> rrel_1: rrel_fixed: rrel_scp_var: _graph;;
+			-> rrel_2: rrel_assign: rrel_common: rrel_const:rrel_scp_var: _arc1;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _REZ;;
+			-> rrel_4: rrel_assign: rrel_scp_var: rrel_pos_const_perm: _arc24;;
+			-> rrel_5: rrel_fixed: rrel_scp_const: nrel_number_of_edge_connection;;
+
+
+			=> nrel_goto: ..proc_run_testcase_operator_return_asn;;
+		*);;
+		
+		->..proc_run_testcase_operator_return_asn (*
+			<- genElStr3;;
+			
+			-> rrel_1: rrel_fixed: rrel_scp_var: _agent_answer;;
+			-> rrel_2: rrel_assign: rrel_pos_const_perm: rrel_scp_var: _arc12;;
+			-> rrel_3: rrel_fixed: rrel_scp_var: _REZ;;
+			
+			=> nrel_goto: ..proc_run_testcase_operator_return_end;;
+		*);;
+		-> ..proc_run_testcase_operator_return_end (*
+			<- return;;
+		*);;
+	*);;
+*);;
